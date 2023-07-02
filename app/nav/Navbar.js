@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="bg-black p-5">
+    <header className="p-5 mb-5" style={{backgroundColor: "#233876"}}>
         <nav className="flex md:flex-row flex-col justify-between">
             <div>
                 <Link href="/" className="uppercase mx-3">
