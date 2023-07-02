@@ -1,6 +1,11 @@
+
 import { title } from "process";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
 import DisplaySongGrid from './components/DisplaySongGrid'
+
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "./GlobalRedux/store";
+// import {addSongsList} from './GlobalRedux/Features/counter/counterSlice'
 
 async function getList(){
   const url = 'https://billboard-api2.p.rapidapi.com/billboard-global-200?date=2020-09-26&range=1-10';
@@ -35,10 +40,24 @@ async function getList(){
 
 export default async function Home() {
 
+ 
+
   const list = await getList();
+
+  const count = useSelector((state: RootState)=>state.songLists.songs)
+  const dispatch = useDispatch()
+
 
   return (
     <div>
+      {/* <button onClick={()=>{dispatch(addSongsList({
+        id: 1,
+        song_name: "vampire",
+        artist_name: "vampire",
+        artist_url: "vampire",
+        release_date: "vampire",
+      })); console.log(count)}}>increment</button> */}
+
       <div className=" mx-auto flex flex-row flex-wrap justify-around">
         {list?.map((data)=>{
           return(

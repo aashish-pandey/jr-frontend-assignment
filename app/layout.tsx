@@ -1,6 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './nav/Navbar'
+import { Providers } from './GlobalRedux/provider'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -14,11 +16,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className + " bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen"}>
-        <Navbar/>
-        {children}
-      </body>
-    </html>
+    
+    <Providers>
+        <html lang="en">
+          <body className={inter.className + " bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen"}>
+            <Navbar/>
+            {children}
+            
+          </body>
+        </html>
+    </Providers>
+    
   )
 }
