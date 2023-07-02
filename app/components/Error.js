@@ -10,7 +10,7 @@ export default function Error() {
         </div>
         </div>
         <h1 class="mt-5 text-[36px] font-bold text-slate-800 lg:text-[50px]">500 - Server error</h1>
-        <p class="text-slate-600 mt-5 lg:text-lg">Oops something went wrong. Try to refresh this page or <br/> feel free to contact us if the problem presists.<br/>Just don't reject me I am a good learner</p>
+        <p class="text-slate-600 mt-5 lg:text-lg">Oops something went wrong. Try to refresh this page or <br/> feel free to contact us if the problem presists.</p>
     </div>
     </div>
   )
