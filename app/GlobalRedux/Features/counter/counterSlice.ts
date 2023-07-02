@@ -17,7 +17,7 @@ type songItemState = {
 }
 
 const initialState : songItemState = {
-    songs: [ ]
+    songs: []
 }
 
 
@@ -32,6 +32,7 @@ export const counterSlice = createSlice({
     reducers:{
         addSongsList: (state, action: PayloadAction<songItem>)=>{
             state.songs.push(action.payload)
+            console.log(state.songs, "state songs")
         }
     }
 })
